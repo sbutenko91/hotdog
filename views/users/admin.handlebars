@@ -1,0 +1,33 @@
+<div class="user-dashboard-wrapper scroll-wrapper">
+    <hr>
+    {{#if users}}
+    <table id="mytable" class="table table-bordered table-striped">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{firstName}}</td>
+                <td>{{lastName}}</td>
+                <td>{{email}}</td>
+                <td><button onclick="location.href='/users/edit/{{id}}'" class="btn btn-info shadow-none">Edit</button></td>
+                <td>
+                    <form method="post" action="/users/{{id}}?_method=DELETE">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" class="btn btn-danger" value="Delete"
+                            onclick="return confirm('Are you sure you want to delete this user?');">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <p>No users listed</p>
+    {{/if}}
+</div>

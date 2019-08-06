@@ -1,0 +1,127 @@
+::-webkit-scrollbar {
+    display: none !important;
+  }
+
+// ------------- NAVBAR -------------------
+
+.navbar {
+    background-color: #2c632e;
+    position: fixed;
+    width: 100%;
+    right: 0;
+    top: 0;
+    z-index: 2;
+.navbar-brand{
+    color: #fff;
+}
+.nav-link{
+    color: #fff;
+}
+.navbar-toggler-icon{
+    color: #fff;
+}
+.navbar-toggler{
+    cursor: pointer;
+    outline: none;
+}
+.navbar-toggler-icon{
+    background-image: url('../images/icon-menu-toggle.png');
+}
+}
+
+// --------------- MAIN WRAPPER ----------
+
+.main-wrapper{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+// --------- COMMON ---------
+
+.scroll-wrapper{
+    max-width: 100%;
+    overflow-x: scroll;
+}
+.camelcase{
+    text-transform: capitalize;
+}
+.alert{
+    position: fixed;
+    width: 100%;
+    max-width: 320px;
+    z-index: 2;
+    top: 3px;
+    right: 3px;
+}
+label{
+    text-transform: capitalize;
+}
+.badge{
+    cursor: pointer;
+}
+.title{
+    margin-top: 15px;
+    color: #2c632e;
+}
+.top-line{
+    width: 250px;
+    height: 4px;
+    margin: 20px auto;
+    background: -moz-linear-gradient(left, #1a841a 0%, #96dd99 50%, #1a841a 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #1a841a 0%,#96dd99 50%,#1a841a 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #1a841a 0%,#96dd99 50%,#1a841a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.btn-primary {
+    background-color: #2c632e;
+    border-color: #2c632e;
+    &:hover{
+        background-color: #50a553;
+        border-color:#50a553;
+    }
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+    background-color: #50a553;
+    border-color:#50a553;
+}
+
+.form-card{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    -webkit-box-shadow: -14px 4px 25px -6px  rgb(39, 126, 75);
+    -moz-box-shadow: -14px 4px 25px -6px  rgb(39, 126, 75);
+    box-shadow: -14px 4px 25px -6px  rgb(39, 126, 75);
+    .text-center{
+        color: #2c632e;
+    }
+}
+
+#mytable{
+    text-align: center;
+    th{
+        text-transform: capitalize;
+        background-color: #2c632e;
+        color: #fff;
+    }
+    .btn{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .badge{
+        height: 24px;
+        padding-top: 5px;
+        width: 80px;
+        font-size: 15px;
+    }
+}
+
+.list-card{
+    width: 100%;
+    max-width: 280px;
+}
+.openList{
+    height: auto !important;
+    transition: height 1s ease;
+}
+
+
+

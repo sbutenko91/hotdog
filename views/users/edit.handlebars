@@ -1,0 +1,25 @@
+{{#each errors}}
+
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+
+<div class="card form-card card-body">
+    <h3 class="text-center">Edit User data</h3>
+    <form action="/users/userdashboard/{{user.id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control shadow-none" name="firstName" value="{{user.firstName}}">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control shadow-none" name="lastName" value="{{user.lastName}}">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control shadow-none" name="email" value="{{user.email}}">
+        </div>
+        <button type="submit" class="btn btn-primary shadow-none">Update</button>
+    </form>
+</div>

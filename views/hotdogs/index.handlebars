@@ -1,0 +1,67 @@
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center title wow fadeInRight">Create your own hot dog :)</h1>
+      <div class="top-line"></div>
+    </div>
+  </div>
+<div class="row mt-2">
+  {{#if hotdogs}} {{#each hotdogs}}
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card form-card mb-5 list-card h{{id}} fadeInLeft wow">
+      {{#if imageUrl}}
+      <div style="max-width: 100%; height: 280px; background: url('{{imageUrl}}'); background-position: center; background-size: cover">
+      </div>
+      {{else}}
+      <div style="max-width: 100%; height: 280px; background: url('/images/hot-dog-icon-png.png'); background-position: center; background-size: cover">
+      </div>
+      {{/if}}
+      <div class="card-body">
+        <h5 class="card-title camelcase">{{type}}</h5>
+        <div class="l{{id}} mt-2 mb-3" style="height: 50px; overflow-y: hidden">
+          <div class="list{{id}}">
+            {{#each ingredients}}
+            <span class="badge badge-warning camelcase">{{this}}</span>
+            {{/each}}
+          </div>
+        </div>
+        <button class="btn btn-success btn-sm float-left mr-2 showmore{{id}} shadow-none wow fadeInDown" data-wow-delay=".4s">Show more</button>
+        <button onclick="location.href='/hotdogs/edit/{{id}}'" class="btn btn-info btn-sm wow fadeInDown float-left mr-2 shadow-none">
+          Edit
+        </button>
+        <form method="post" action="/hotdogs/{{id}}?_method=DELETE">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" class="btn btn-danger btn-sm float-left shadow-none  wow fadeInDown"  data-wow-delay=".2s" value="Delete" onclick="return confirm('Are you sure you want to delete this hot dog?');">
+        </form>
+      </div>
+    </div>
+  </div>
+  {{/each}} {{else}}
+  <p>No hot dogs listed</p>
+  {{/if}}
+</div>
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script>
+  {{#each hotdogs}}
+  $(function () {
+    var listHeight = $('.list{{id}}').height();
+
+    if (listHeight > 50) {
+      $(".showmore{{id}}").css("display", "block");
+      console.log("more");
+    } else {
+      $(".showmore{{id}}").css("display", "none");
+      console.log("less");
+    }
+    $(".showmore{{id}}").click(function () {
+    $(".l{{id}}").toggleClass("openList");
+
+      if ($(".showmore{{id}}").text() == "Show more") {
+        $(".showmore{{id}}").text("Hide");
+      } else {
+        $(".showmore{{id}}").text("Show more");
+      };
+    });
+    });
+  {{/each}}
+
+</script>

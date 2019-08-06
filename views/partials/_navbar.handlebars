@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-sm mb-3 fixed">
+  {{#if user}}
+  <a class="navbar-brand text-white" href="/hotdogs">Hot Dog Creator</a>
+  {{else}}
+  <a class="navbar-brand text-white">Hot Dog Creator</a>
+  {{/if}}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      {{#if user}}
+      <li class="nav-item">
+        <a class="nav-link" href="/hotdogs">Hotdog list</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-sm btn-success shadow-none" style="max-width: 120px;" href="/hotdogs/add">+ New hot dog</a>
+      </li>
+      {{/if}}
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      {{#if user}}
+      <li class="nav-item">
+        <a class="nav-link" href="/users/userdashboard">Users</a>
+      </li>
+      <li class="nav-item">
+        <a href="/users/logout" class="nav-link">Logout</a>
+      </li>
+      {{else}}
+      <li class="nav-item">
+        <a href="/users/register" class="nav-link">Register</a>
+      </li>
+      <li class="nav-item">
+        <a href="/users/login" class="nav-link">Login</a>
+      </li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
